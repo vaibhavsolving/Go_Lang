@@ -13,7 +13,6 @@ Basic types
 Go's basic types are
 
 bool
-
 string
 
 int  int8  int16  int32  int64
@@ -33,13 +32,53 @@ The int, uint, and uintptr types are usually 32 bits wide on 32-bit systems and 
 
 
 
-note:
-%T (Type): This prints the Go data type of the variable.
-%v (Value): This prints the default value of the variable in a natural format.
-e.g fmt.Printf("Type: %T Value: %v\n", z, z)
-
-
 // Important git command
 git add stuff..
 git commit -m "xyz"
 git push -u origin main
+
+
+//Almost all printing sentex
+fmt.Print(10)      // prints 10
+fmt.Println(10)    // prints 10 and new line
+fmt.Sprint(10)     // returns "10"   without printing
+fmt.Sprintf("Age=%d", 21) // returns "Age=21"  without printing but assing
+
+
+
+// Difference b/w %v and %g
+%v	Print the value in its default format
+%g	Print a floating-point number in a compact form
+%T   Print the data Type of varibale
+%T (Type): This prints the Go data type of the variable.
+%v (Value): This prints the default value of the variable in a natural format.
+e.g fmt.Printf("Type: %T Value: %v\n", z, z)
+%s means:  Print a string.
+
+
+
+
+//Switch
+A switch statement is a shorter way to write a sequence of if - else statements. It runs the first case whose 
+value is equal to the condition expression.
+
+Go's switch is like the one in C, C++, Java, JavaScript, and PHP, 
+except that Go only runs the selected case, not all the cases that follow. In effect, the
+break statement that is needed at the end of each case in those languages is provided automatically in Go. Another important difference is 
+that Go's switch cases need not be constants, and the values involved need not be integers.
+
+
+
+
+//Defer
+A defer statement defers the execution of a function until the surrounding function returns.
+
+The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
+
+//Stacking defers
+Deferred function calls are pushed onto a stack. 
+When a function returns, its deferred calls are executed in last-in-first-out order.
+
+
+
+
